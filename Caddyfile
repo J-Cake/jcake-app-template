@@ -1,5 +1,5 @@
 localhost {
-    root * /www
+    root * /var/www
 
     # Check for help articles
     @help {
