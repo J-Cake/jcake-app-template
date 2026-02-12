@@ -1,0 +1,16 @@
+[package]
+name = "common"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+log = { version = "0.4.28" }
+clap = { version = "4.5.48", features = ["derive"] }
+tokio = { version = "1.47.1", features = ["full"] }
+toml = { version = "1.0.1+spec-1.1.0" }
+serde = { version = "1.0.228", features = ["derive"] }
+rune = { version = "0.14.1", features = ["tokio"] }
+async-trait = { version = "0.1.89" }
+backtrace = { version = "0.3.76" }
+blake3 = "1.8.2"
+base64 = "0.22.1"

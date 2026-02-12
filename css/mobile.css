@@ -1,0 +1,10 @@
+/**
+Mobile-specific overrides
+ */
+
+@media screen and (max-device-width: 480px) {
+    input, select, textarea {
+        width: 100%;
+    }
+}
+

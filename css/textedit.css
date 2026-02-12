@@ -1,0 +1,50 @@
+input[type="text"], input[type="number"], input[type="url"], input[type="password"], input[type="search"], textarea {
+    padding: var(--spacing-s) var(--spacing-m);
+
+    border: none;
+
+    font-size: var(--font-size-m);
+
+    text-align: left;
+
+    border-radius: var(--radius-s);
+
+    cursor: text;
+}
+
+textarea {
+    resize: vertical;
+}
+
+:is(input[type="text"], input[type="number"], input[type="url"], input[type="password"], input[type="search"], textarea).stretch {
+    flex: 1;
+    grid-column: 1 / -1;
+}
+
+:is(input[type="text"], input[type="number"], input[type="url"], input[type="password"], input[type="search"], textarea) {
+    background: var(--background);
+    border: var(--border-dull);
+    border-color: var(--secondary-solid);
+    color: var(--foreground-secondary);
+}
+
+:is(input[type="text"], input[type="number"], input[type="url"], input[type="password"], input[type="search"], textarea):focus {
+    outline: none;
+
+    box-shadow: var(--shadow-l);
+}
+
+:is(input[type="text"], input[type="number"], input[type="url"], input[type="password"], input[type="search"], textarea).error {
+    border-color: var(--red-solid);
+    color: var(--red-solid);
+}
+
+:is(input[type="text"], input[type="number"], input[type="url"], input[type="password"], input[type="search"], textarea).warning {
+    border-color: var(--orange-solid);
+    color: var(--orange-solid);
+}
+
+:is(input[type="text"], input[type="number"], input[type="url"], input[type="password"], input[type="search"], textarea).success {
+    border-color: var(--green-solid);
+    color: var(--green-solid);
+}

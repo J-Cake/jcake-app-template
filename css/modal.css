@@ -1,0 +1,118 @@
+/**
+Specific CSS module implementing modals
+ */
+
+:is(dialog, div[popover]) {
+    position: fixed;
+
+    padding: var(--spacing-m);
+
+    min-width: var(--element-s);
+    max-height: 90vh;
+
+    overflow: auto;
+
+    background: var(--background);
+    /*--background: var(--background-02);*/
+
+    border-radius: var(--radius-l);
+    box-shadow: var(--shadow-l);
+
+    --foreground: var(--foreground-04);
+
+    border: var(--border-dull);
+    /*border-color: var(--background-02);*/
+    color: var(--foreground-secondary);
+
+    font-size: var(--font-size-s);
+}
+
+:is(dialog, div[popover]) > button.close-btn {
+    position: absolute;
+
+    width: var(--spacing-xl);
+    height: var(--spacing-xl);
+
+    color: var(--foreground-secondary);
+
+    top: var(--spacing-m);
+    right: var(--spacing-m);
+}
+
+dialog.context-menu {
+    inset: unset;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-auto-rows: auto;
+
+    min-width: var(--element-xs);
+
+    grid-column-gap: var(--spacing-xs);
+    grid-row-gap: var(--spacing-xxs);
+}
+
+dialog.context-menu::backdrop {
+    position: fixed;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+dialog.context-menu {
+    position: fixed;
+}
+
+dialog.context-menu :is(.context-menu-item, .context-menu-separator, .context-menu-header) {
+    list-style-type: none;
+    grid-column: 1 / -1;
+
+    padding: var(--spacing-xxs) var(--spacing-s);
+}
+
+dialog.context-menu .context-menu-item {
+    display: grid;
+
+    grid-template-columns: subgrid;
+    grid-template-areas: 'left label right';
+    align-items: center;
+
+    box-sizing: border-box;
+
+    border-radius: var(--radius-s);
+    border: var(--border-dull);
+    border-color: transparent;
+}
+
+dialog.context-menu .context-menu-item .context-menu-item-label {
+    text-align: left;
+}
+
+dialog.context-menu .context-menu-item:is(:hover, :focus) {
+    border: var(--border-dull);
+    background: var(--background-dull);
+    outline: none;
+}
+
+dialog.context-menu .context-menu-item .left {
+    grid-area: left;
+}
+
+dialog.context-menu .context-menu-item .right {
+    grid-area: right;
+}
+
+dialog.context-menu .context-menu-separator hr {
+    border: none;
+    border-top: var(--border-dull);
+}
+
+dialog.context-menu .context-menu-header h6 {
+    font-weight: bold;
+    font: var(--font-heading-s);
+    font-size: var(--font-size-s);
+    margin: 0;
+    margin-block: var(--spacing-s);
+    padding: 0;
+    text-align: center;
+}

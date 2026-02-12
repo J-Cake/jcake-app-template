@@ -1,0 +1,15 @@
+input[type="file"] {
+    display: block;
+
+    appearance: none;
+
+    width: 100%;
+
+    border: var(--border-dull);
+    border-style: dashed;
+
+    padding: var(--spacing-m);
+    box-sizing: border-box;
+
+    border-radius: var(--widget-radius-m);
+}
